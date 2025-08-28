@@ -5,8 +5,8 @@ import Breadcrumbs from "@/components/Breadcrumbs";
 
 export default function SiteChrome({ children }:{ children: React.ReactNode }){
   // TODO: replace with your real details
-  const studentName = "Your Name";
-  const studentNumber = "YourStudentNumber";
+  const studentName = "Brham Bhatia";
+  const studentNumber = "21504199@students.ltu.edu.au";
   return (
     <>
       <Header studentName={studentName} studentNumber={studentNumber}/>
