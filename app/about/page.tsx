@@ -9,6 +9,8 @@ export default function About(){
       <p><strong>How to use this website (video):</strong></p>
       <video controls width={560} aria-label="How to use this website">
         <source src="/how-to-use.mp4" type="video/mp4" />
+        <p><strong>Note:</strong> The walkthrough video explains how to use all features of this app.</p>
+
         Your browser does not support the video tag.
       </video>
     </SiteChrome>
