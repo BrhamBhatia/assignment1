@@ -1,0 +1,38 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model CaseEvent {
+  id          Int         @id @default(autoincrement())
+  code        String      @unique
+  actor       String
+  initialMsg  String
+  escalateMsg String
+  law         String
+  delaySec    Int
+  escalateSec Int
+  createdAt   DateTime    @default(now())
+  CaseState   CaseState[]
+}
+
+model CaseState {
+  id           Int       @id @default(autoincrement())
+  eventId      Int
+  acknowledged Boolean   @default(false)
+  escalated    Boolean   @default(false)
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  event        CaseEvent @relation(fields: [eventId], references: [id])
+}
+
+model HtmlOutput {
+  id        Int      @id @default(autoincrement())
+  title     String
+  html      String
+  createdAt DateTime @default(now())
+}
